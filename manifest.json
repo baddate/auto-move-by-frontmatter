@@ -1,0 +1,10 @@
+{
+	"id": "auto-move-by-frontmatter",
+	"name": "Auto Move by Frontmatter",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Automatically move notes to specific folders based on frontmatter fields",
+	"author": "Mercas",
+	"authorUrl": "https://github.com/baddate",
+	"isDesktopOnly": false
+}

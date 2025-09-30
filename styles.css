@@ -1,0 +1,360 @@
+/* Auto Move Plugin Styles */
+
+/* ===== Rules Container ===== */
+.rules-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* ===== Rule Container ===== */
+.rule-container {
+    background-color: var(--background-secondary);
+    transition: all 0.3s ease;
+}
+
+.rule-container:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rule-container .setting-item {
+    border-bottom: none;
+    padding: 8px 0;
+}
+
+.rule-container .setting-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Rule header styles */
+.rule-container .setting-item:first-child {
+    border-bottom: 1px solid var(--background-modifier-border);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.rule-container .setting-item:first-child .setting-item-name {
+    font-weight: bold;
+    color: var(--text-accent);
+}
+
+/* ===== Conditions Container ===== */
+.conditions-container {
+    background-color: var(--background-primary-alt);
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.condition-item {
+    background-color: var(--background-primary);
+    transition: all 0.2s ease;
+}
+
+.condition-item:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+/* Condition header with title and remove button */
+.condition-item > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.condition-item > div:first-child strong {
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Remove condition button */
+.condition-item button.mod-warning {
+    background-color: transparent;
+    color: var(--text-error);
+    border: 1px solid var(--text-error);
+    transition: all 0.2s ease;
+}
+
+.condition-item button.mod-warning:hover {
+    background-color: var(--background-modifier-error);
+    color: var(--text-on-accent);
+    border-color: var(--background-modifier-error);
+}
+
+/* Condition settings spacing */
+.condition-item .setting-item {
+    padding: 6px 0;
+}
+
+.condition-item .setting-item:first-child {
+    padding-top: 0;
+}
+
+/* ===== Buttons ===== */
+/* Browse folder button */
+.rule-container button.mod-cta {
+    margin-left: 5px;
+    padding: 4px 12px;
+    font-size: 13px;
+}
+
+/* Delete rule button */
+.rule-container > .setting-item:first-child button.mod-warning {
+    background-color: var(--background-modifier-error);
+    color: var(--text-on-accent);
+    border: none;
+}
+
+.rule-container > .setting-item:first-child button.mod-warning:hover {
+    background-color: var(--background-modifier-error-hover);
+}
+
+/* Add condition button */
+.rule-container .setting-item button:not(.mod-warning):not(.mod-cta) {
+    background-color: transparent;
+    color: var(--interactive-accent);
+    border: 1px dashed var(--interactive-accent);
+    transition: all 0.2s ease;
+}
+
+.rule-container .setting-item button:not(.mod-warning):not(.mod-cta):hover {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    border-style: solid;
+}
+
+/* ===== Disabled State ===== */
+.rule-container.disabled {
+    opacity: 0.6;
+}
+
+/* ===== Usage Instructions ===== */
+.setting-item-description ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.setting-item-description li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+/* ===== Input Fields ===== */
+.rule-container input[type="text"],
+.condition-item input[type="text"] {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rule-container input[type="text"]:focus,
+.condition-item input[type="text"]:focus {
+    border-color: var(--interactive-accent);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+
+/* ===== Dropdowns ===== */
+.rule-container select,
+.condition-item select {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.rule-container select:focus,
+.condition-item select:focus {
+    border-color: var(--interactive-accent);
+    outline: none;
+}
+
+/* ===== Logic Operator Badge ===== */
+.rule-container .setting-item[data-logic-operator] .setting-item-name::after {
+    content: attr(data-logic-operator);
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+/* ===== Notices Enhancement ===== */
+.notice.mod-success {
+    background-color: var(--background-modifier-success);
+}
+
+.notice.mod-error {
+    background-color: var(--background-modifier-error);
+}
+
+/* ===== Animations ===== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rule-container {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.condition-item {
+    animation: fadeIn 0.2s ease;
+}
+
+/* ===== Folder Suggestion Container ===== */
+.folder-suggestion-container {
+    background: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9999;
+    font-size: 14px;
+    color: var(--text-normal);
+}
+
+/* Scrollbar styling for suggestion container */
+.folder-suggestion-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.folder-suggestion-container::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+    border-radius: 4px;
+}
+
+.folder-suggestion-container::-webkit-scrollbar-thumb {
+    background: var(--background-modifier-border);
+    border-radius: 4px;
+}
+
+.folder-suggestion-container::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Suggestion item */
+.folder-suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.folder-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.folder-suggestion-item:hover {
+    background: var(--background-modifier-hover);
+}
+
+.folder-suggestion-item.is-selected {
+    background: var(--interactive-accent);
+    color: var(--text-on-accent);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .rule-container {
+        padding: 8px;
+    }
+
+    .rule-container .setting-item {
+        flex-direction: column;
+    }
+
+    .rule-container .setting-item-control {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .conditions-container {
+        margin-left: 0 !important;
+    }
+
+    .condition-item {
+        padding: 6px;
+    }
+
+    .condition-item > div:first-child {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .condition-item button.mod-warning {
+        align-self: flex-end;
+    }
+}
+
+/* ===== Dark Mode Enhancements ===== */
+.theme-dark .rule-container {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .rule-container:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.theme-dark .folder-suggestion-container {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Accessibility ===== */
+.rule-container button:focus-visible,
+.condition-item button:focus-visible {
+    outline: 2px solid var(--interactive-accent);
+    outline-offset: 2px;
+}
+
+.rule-container input:focus-visible,
+.condition-item input:focus-visible,
+.rule-container select:focus-visible,
+.condition-item select:focus-visible {
+    outline: 2px solid var(--interactive-accent);
+    outline-offset: 2px;
+}
+
+/* ===== Empty State ===== */
+.rules-container:empty::before {
+    content: "No rules configured. Click 'Add Rule' to create your first rule.";
+    display: block;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    background-color: var(--background-secondary);
+    border: 2px dashed var(--background-modifier-border);
+    border-radius: 6px;
+}
